@@ -16,7 +16,7 @@ https://github.com/pmkol/openwrt-lite/releases
 
 ```
 【首次登陆】
-网口：WAN=eth0
+网口：WAN=eth1
 地址：10.0.0.1（默认）
 用户：root
 密码：空
