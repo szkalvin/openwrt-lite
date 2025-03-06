@@ -85,7 +85,7 @@ fi
 [ "$2" = "x86_64" ] && export platform="x86_64" toolchain_arch="x86_64"
 
 # lan
-[ -n "$LAN" ] && export LAN=$LAN || export LAN=10.0.0.1
+[ -n "$LAN" ] && export LAN=$LAN || export LAN=192.168.123.1
 
 # build flags
 if [ "$(whoami)" = "runner" ] && [ -n "$GITHUB_REPO" ] && [ "$BUILD_TOOLCHAIN" != "y" ]; then
