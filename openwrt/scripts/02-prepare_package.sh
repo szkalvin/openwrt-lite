@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-# golang - 1.23
+# golang - 1.24
 rm -rf feeds/packages/lang/golang
-pkg_golang=$(curl -s https://github.com/pmkol/openwrt-gh-action-sdk/commit/2a81ad56a760e8629ad38fb820fd931f5323d54f.patch | awk '/^\+.*packages_lang_golang/ {sub(/^\+/, ""); print}' | sed -n 's/.*git clone https:\/\/github.com\/\(.*\) feeds\/packages\/lang\/golang/\1/p')
+pkg_golang=$(curl -s https://github.com/pmkol/openwrt-gh-action-sdk/commit/a67931ef2b14e7c4cf632f277a2263d9c61f980f.patch | awk '/^\+.*packages_lang_golang/ {sub(/^\+/, ""); print}' | sed -n 's/.*git clone https:\/\/github.com\/\(.*\) feeds\/packages\/lang\/golang/\1/p')
 git clone https://$github/$pkg_golang --depth 1 feeds/packages/lang/golang
 [ "$DEV_BUILD" = "y" ] && sed -i 's/GO_AMD64:=v1/GO_AMD64:=v2/g' feeds/packages/lang/golang/golang-values.mk
 
